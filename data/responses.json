@@ -1,0 +1,8 @@
+[
+  {
+    "request_id": "REQ-789",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  }
+]

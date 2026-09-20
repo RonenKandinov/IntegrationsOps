@@ -1,0 +1,9 @@
+[
+  {
+    "incident_id": "INC-001",
+    "merchant_id": "merchant_123",
+    "lender_id": "lender_456",
+    "failure_code": "INVALID_AMOUNT",
+    "request_id": "REQ-789"
+  }
+]
