@@ -1,1 +1,1 @@
-"""Investigation engine dispatcher. Implemented in a later step."""
+"""Investigation engine (not implemented in this stage)."""
