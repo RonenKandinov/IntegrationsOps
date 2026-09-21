@@ -2,7 +2,7 @@
 
 Shorten the path from “we have an integration failure” to “we know what probably caused it, why, and what should be checked or fixed next.”
 
-This is a deterministic investigation engine. The failure type selects an investigation path. The path selects tools. The diagnosis comes from comparing evidence.
+This is a deterministic investigation engine. The failure type selects an investigation path. The path selects tools. The diagnosis comes from comparing evidence.python
 
 ## Architecture
 
@@ -91,6 +91,60 @@ Evidence:
 - maximum_allowed = 50000
 ```
 
+## Phase 3 — Operations automation (dry-run)
+
+Runs deterministic operational workflows using existing validation and safety checks. The first workflow does **not** write Store data or change configuration.
+
+Approve only when validation has no issues.
+
+```bash
+python -m integrationops automate REQ-000001
+python -m integrationops automate REQ-000002
+```
+
+`REQ-000001` is above max → BLOCKED. `REQ-000002` is in range → READY.
+
+Every workflow below is dry-run. None of them write Store data or change configuration.
+
+Batch runs the same request workflow once per id:
+
+```bash
+python -m integrationops automate-batch REQ-000001 REQ-000002
+```
+
+Merchant onboarding checks `merchant_id` and `source_id` on `data/generated/merchants.json`. City, state, and zip are optional.
+
+```bash
+python -m integrationops automate-onboarding MER-000001
+```
+
+Configuration change evaluates a proposed lender min, max, or currency in memory. Approve only when the proposal is valid, currency is unchanged, and every supplied request for that lender still passes the existing amount rule.
+
+```bash
+python -m integrationops automate-config lender_456 --max-amount 100000 --request REQ-000002
+```
+
+Investigation resolution asks whether an incident can be handed off as an automation candidate. A determinate `INVALID_AMOUNT` diagnosis is `CANDIDATE`. Timeout, authentication, and undetermined cases need human review. Nothing is approved or applied.
+
+```bash
+python -m integrationops automate-resolution INC-001
+```
+
+```text
+Target: REQ-000001
+Automation: Configuration Validation
+Status: BLOCKED
+Action: BLOCK
+Dry run: True
+
+Checks:
+- required_references: PASS
+- amount_range: FAIL
+
+Issues:
+- amount_above_max
+```
+
 ## Investigate an incident
 
 ```bash
@@ -124,8 +178,9 @@ python -m pytest
 - `src/integrationops/investigations/` — INVALID_AMOUNT, TIMEOUT, AUTHENTICATION_ERROR
 - `src/integrationops/engine/` — `failure_code` dispatcher
 - `src/integrationops/validation/` — amount, reference, and consistency rules
+- `src/integrationops/automation/` — dry-run validation, batch, onboarding, config-change, and resolution workflows
 - `src/integrationops/cli.py` — command line
 
 ## Later (not in this phase)
 
-FastAPI, UI, LLM, automation, cloud.
+FastAPI, UI, LLM, cloud.

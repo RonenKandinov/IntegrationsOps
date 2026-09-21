@@ -6,6 +6,13 @@ import argparse
 import sys
 from pathlib import Path
 
+from integrationops.automation.batch import run_batch_workflow
+from integrationops.automation.config_change import run_config_change_workflow
+from integrationops.automation.format import format_automation_result, format_batch_report
+from integrationops.automation.models import AutomationResult
+from integrationops.automation.onboarding import run_onboarding_workflow
+from integrationops.automation.resolution import run_resolution_workflow
+from integrationops.automation.validation_workflow import run_validation_workflow
 from integrationops.evaluation.scorer import (
     DEFAULT_GROUND_TRUTH_PATH,
     score_scenarios,
@@ -132,6 +139,56 @@ def build_parser() -> argparse.ArgumentParser:
         "target_id",
         help="Request id (REQ-...) or incident id (INC-...)",
     )
+
+    automate_parser = subparsers.add_parser(
+        "automate",
+        help="Dry-run configuration validation workflow for a request id",
+    )
+    automate_parser.add_argument("request_id", help="Request id, for example REQ-000002")
+
+    batch_parser = subparsers.add_parser(
+        "automate-batch",
+        help="Dry-run configuration validation for each request id",
+    )
+    batch_parser.add_argument(
+        "request_ids",
+        nargs="*",
+        help="Request ids, for example REQ-000001 REQ-000002",
+    )
+
+    onboarding_parser = subparsers.add_parser(
+        "automate-onboarding",
+        help="Dry-run merchant onboarding checks",
+    )
+    onboarding_parser.add_argument("merchant_id", help="Merchant id, for example MER-000001")
+    onboarding_parser.add_argument(
+        "--merchants",
+        type=Path,
+        default=None,
+        help="Path to merchants.json",
+    )
+
+    config_parser = subparsers.add_parser(
+        "automate-config",
+        help="Dry-run evaluation of a proposed lender configuration",
+    )
+    config_parser.add_argument("lender_id", help="Lender id, for example lender_456")
+    config_parser.add_argument("--min-amount", type=int, default=None)
+    config_parser.add_argument("--max-amount", type=int, default=None)
+    config_parser.add_argument("--currency", default=None)
+    config_parser.add_argument(
+        "--request",
+        action="append",
+        dest="request_ids",
+        default=None,
+        help="Request id to include in the impact check. Repeat for more than one.",
+    )
+
+    resolution_parser = subparsers.add_parser(
+        "automate-resolution",
+        help="Dry-run automation decision from an existing investigation",
+    )
+    resolution_parser.add_argument("incident_id", help="Incident id, for example INC-001")
     return parser
 
 
@@ -201,6 +258,46 @@ def _validate(args: argparse.Namespace) -> int:
     return 0 if report.valid else 1
 
 
+def _exit_for_result(result: AutomationResult) -> int:
+    return 0 if result.status == "READY" else 1
+
+
+def _automate(args: argparse.Namespace) -> int:
+    result = run_validation_workflow(args.request_id)
+    print(format_automation_result(result))
+    return _exit_for_result(result)
+
+
+def _automate_batch(args: argparse.Namespace) -> int:
+    report = run_batch_workflow(list(args.request_ids))
+    print(format_batch_report(report))
+    return 0 if report.blocked == 0 else 1
+
+
+def _automate_onboarding(args: argparse.Namespace) -> int:
+    result = run_onboarding_workflow(args.merchant_id, merchants_path=args.merchants)
+    print(format_automation_result(result))
+    return _exit_for_result(result)
+
+
+def _automate_config(args: argparse.Namespace) -> int:
+    result = run_config_change_workflow(
+        args.lender_id,
+        min_amount=args.min_amount,
+        max_amount=args.max_amount,
+        currency=args.currency,
+        request_ids=args.request_ids,
+    )
+    print(format_automation_result(result))
+    return _exit_for_result(result)
+
+
+def _automate_resolution(args: argparse.Namespace) -> int:
+    result = run_resolution_workflow(args.incident_id)
+    print(format_automation_result(result))
+    return _exit_for_result(result)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
@@ -212,6 +309,16 @@ def main(argv: list[str] | None = None) -> int:
         return _evaluate_scenarios(args)
     if args.command == "validate":
         return _validate(args)
+    if args.command == "automate":
+        return _automate(args)
+    if args.command == "automate-batch":
+        return _automate_batch(args)
+    if args.command == "automate-onboarding":
+        return _automate_onboarding(args)
+    if args.command == "automate-config":
+        return _automate_config(args)
+    if args.command == "automate-resolution":
+        return _automate_resolution(args)
     try:
         diagnosis = investigate(args.incident_id)
     except EvidenceNotFound as exc:
