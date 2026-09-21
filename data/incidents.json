@@ -5,5 +5,19 @@
     "lender_id": "lender_456",
     "failure_code": "INVALID_AMOUNT",
     "request_id": "REQ-789"
+  },
+  {
+    "incident_id": "INC-002",
+    "merchant_id": "merchant_123",
+    "lender_id": "lender_456",
+    "failure_code": "TIMEOUT",
+    "request_id": "REQ-790"
+  },
+  {
+    "incident_id": "INC-003",
+    "merchant_id": "merchant_123",
+    "lender_id": "lender_456",
+    "failure_code": "AUTHENTICATION_ERROR",
+    "request_id": "REQ-791"
   }
 ]

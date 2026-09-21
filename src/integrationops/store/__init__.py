@@ -1,9 +1,28 @@
-"""Evidence store facade. Callers do not depend on JSON vs a later backend."""
+"""Evidence store facade. Engine and tools do not choose JSON vs Mongo."""
+
+from __future__ import annotations
+
+import os
 
 from integrationops.models import ApiRequest, ApiResponse, Incident, LenderConfig
-from integrationops.store.json_store import EvidenceNotFound, JsonStore, StoreError
+from integrationops.store.base import EvidenceStore
+from integrationops.store.errors import EvidenceNotFound, StoreError
+from integrationops.store.json_store import JsonStore
+from integrationops.store.mongo_store import MongoStore
 
-_store = JsonStore()
+
+def build_store() -> EvidenceStore:
+    backend = os.environ.get("INTEGRATIONOPS_STORE", "json").strip().lower()
+    if backend in ("", "json"):
+        return JsonStore()
+    if backend == "mongo":
+        return MongoStore.from_env()
+    raise StoreError(
+        f"Unknown INTEGRATIONOPS_STORE={backend!r}. Use 'json' or 'mongo'."
+    )
+
+
+_store: EvidenceStore = build_store()
 
 
 def load_incident(incident_id: str) -> Incident:
@@ -24,8 +43,11 @@ def get_lender_config(lender_id: str) -> LenderConfig:
 
 __all__ = [
     "EvidenceNotFound",
+    "EvidenceStore",
     "JsonStore",
+    "MongoStore",
     "StoreError",
+    "build_store",
     "get_lender_config",
     "get_request",
     "get_response",

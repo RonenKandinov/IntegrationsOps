@@ -2,15 +2,15 @@
 
 Shorten the path from “we have an integration failure” to “we know what probably caused it, why, and what should be checked or fixed next.”
 
-This repository currently has package layout, dataclasses, seeded JSON evidence, a JSON store, investigation tools, and the INVALID_AMOUNT investigation path. Engine and CLI are not implemented yet.
+This is a deterministic investigation engine. The failure type selects an investigation path. The path selects tools. The diagnosis comes from comparing evidence.
 
-## Approved architecture
+## Architecture
 
 ```
-CLI → Engine → Investigation Path → Tools → Store → JSON Evidence
+CLI → Engine → Investigation Path → Tools → Store facade → JsonStore or MongoStore
 ```
 
-MVP path: **INVALID_AMOUNT** only.
+The engine does not run every tool. It loads the incident, reads `failure_code`, and dispatches to one path. Engine and tools do not know whether evidence is JSON or MongoDB.
 
 ## Setup
 
@@ -18,18 +18,87 @@ Python 3.12+.
 
 ```bash
 cd IntegrationOps
-python -m pip install -e .
+python -m pip install -e ".[dev]"
 ```
 
-## Current layout
+Default store is JSON under `data/`. To use MongoDB later:
 
-- `data/` — local JSON evidence (`incidents`, `requests`, `responses`, `lenders`)
+```bash
+python -m pip install -e ".[mongo]"
+set INTEGRATIONOPS_STORE=mongo
+set INTEGRATIONOPS_MONGO_URI=mongodb://localhost:27017
+```
+
+## Merchant data (Olist)
+
+The full unmodified Kaggle archive lives under `data/raw/` (customers, geolocation, orders, payments, reviews, products, sellers, category translation).
+
+**Today only sellers are imported.** Place/keep:
+
+```text
+data/raw/olist_sellers_dataset.csv
+```
+
+Columns used: `seller_id`, `seller_zip_code_prefix`, `seller_city`, `seller_state`. Extra columns and the other Olist tables are ignored by the importer. This dataset has no merchant name, category, or currency fields.
+
+Import and normalize:
+
+```bash
+python -m integrationops import-merchants
+```
+
+Normalized merchants are written to `data/generated/merchants.json` with stable ids (`MER-000001`, …). Raw files stay in `data/raw/` so they are never mixed with application-generated data or with Phase 1 investigation JSON under `data/`.
+
+The investigation engine does not read Kaggle files. MongoDB is planned later behind the existing store facade; it is not used for this import.
+
+## Generate investigation scenarios
+
+```bash
+python -m integrationops generate-scenarios
+```
+
+Writes synthetic `requests.json`, `responses.json`, `incidents.json`, `lenders.json`, and `ground_truth.json` under `data/generated/`. Ground truth is for later evaluation only; the engine never reads it.
+
+Investigate a generated incident (after generate):
+
+```bash
+python -m integrationops investigate INC-000001
+```
+
+## Investigate an incident
+
+```bash
+python -m integrationops investigate INC-001
+python -m integrationops investigate INC-002
+python -m integrationops investigate INC-003
+```
+
+Seeded cases:
+
+- `INC-001` `INVALID_AMOUNT` — amount `5000` vs minimum `10000`
+- `INC-002` `TIMEOUT` — lender API did not respond in time
+- `INC-003` `AUTHENTICATION_ERROR` — merchant is not authenticated with the lender
+
+## Tests
+
+```bash
+python -m pytest
+```
+
+## Layout
+
+- `data/` — Phase 1 investigation JSON (`incidents`, `requests`, `responses`, `lenders`)
+- `data/raw/` — unmodified Olist CSV
+- `data/generated/` — `merchants.json` plus generated requests, responses, incidents, lenders, ground truth
+- `src/integrationops/generators/` — synthetic scenario generator
+- `src/integrationops/importers/` — Olist merchant importer
 - `src/integrationops/models/` — dataclasses
-- `src/integrationops/store/` — JSON lookups that return dataclasses
-- `src/integrationops/tools/` — investigation actions (`get_request`, `compare_amount_to_limits`, …)
-- `src/integrationops/investigations/` — INVALID_AMOUNT path (`investigate_invalid_amount`)
-- `src/integrationops/engine/` — package placeholder
+- `src/integrationops/store/` — facade, `JsonStore`, `MongoStore`
+- `src/integrationops/tools/` — investigation actions
+- `src/integrationops/investigations/` — INVALID_AMOUNT, TIMEOUT, AUTHENTICATION_ERROR
+- `src/integrationops/engine/` — `failure_code` dispatcher
+- `src/integrationops/cli.py` — command line
 
-## Out of scope (this MVP)
+## Later (not in this phase)
 
-FastAPI, MongoDB, frontend, LLM, TIMEOUT / AUTHENTICATION_ERROR paths, cloud, external APIs.
+FastAPI, UI, LLM, automation, cloud.

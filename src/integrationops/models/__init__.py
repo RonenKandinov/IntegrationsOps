@@ -36,6 +36,15 @@ class LenderConfig:
 
 
 @dataclass
+class Merchant:
+    merchant_id: str
+    source_id: str
+    city: str | None = None
+    state: str | None = None
+    zip_code_prefix: str | None = None
+
+
+@dataclass
 class EvidenceItem:
     source: str
     fact: str

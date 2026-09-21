@@ -4,5 +4,17 @@
     "status": "FAILED",
     "error_code": "INVALID_AMOUNT",
     "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-790",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-791",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
   }
 ]
