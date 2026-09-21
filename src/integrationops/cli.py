@@ -6,6 +6,10 @@ import argparse
 import sys
 from pathlib import Path
 
+from integrationops.evaluation.scorer import (
+    DEFAULT_GROUND_TRUTH_PATH,
+    score_scenarios,
+)
 from integrationops.engine import investigate
 from integrationops.generators.scenario_generator import (
     DEFAULT_MERCHANTS_PATH,
@@ -21,6 +25,8 @@ from integrationops.importers.olist_merchants import (
 )
 from integrationops.models import Diagnosis
 from integrationops.store import EvidenceNotFound
+from integrationops.validation.format import format_validation_report
+from integrationops.validation.service import validate_incident, validate_request
 
 
 def format_diagnosis(diagnosis: Diagnosis) -> str:
@@ -106,6 +112,26 @@ def build_parser() -> argparse.ArgumentParser:
         default=1,
         help="Seed for reproducible generation",
     )
+
+    evaluate_parser = subparsers.add_parser(
+        "evaluate-scenarios",
+        help="Score investigation diagnoses against generated ground truth",
+    )
+    evaluate_parser.add_argument(
+        "--ground-truth",
+        type=Path,
+        default=DEFAULT_GROUND_TRUTH_PATH,
+        help="Path to data/generated/ground_truth.json",
+    )
+
+    validate_parser = subparsers.add_parser(
+        "validate",
+        help="Validate a request or incident against Store evidence",
+    )
+    validate_parser.add_argument(
+        "target_id",
+        help="Request id (REQ-...) or incident id (INC-...)",
+    )
     return parser
 
 
@@ -132,6 +158,8 @@ def _generate_scenarios(args: argparse.Namespace) -> int:
     except ScenarioGeneratorError as exc:
         print(exc, file=sys.stderr)
         return 1
+    if bundle.warning:
+        print(bundle.warning, file=sys.stderr)
     print(f"Used {bundle.merchants_used} merchants")
     print(f"Generated {len(bundle.requests)} requests")
     print(f"Generated {len(bundle.responses)} responses")
@@ -146,6 +174,33 @@ def _generate_scenarios(args: argparse.Namespace) -> int:
     return 0
 
 
+def _evaluate_scenarios(args: argparse.Namespace) -> int:
+    try:
+        report = score_scenarios(ground_truth_path=args.ground_truth)
+    except FileNotFoundError as exc:
+        print(exc, file=sys.stderr)
+        return 1
+    print("Scenario Evaluation")
+    print("-------------------")
+    print(f"Total cases:       {report.total_cases}")
+    print(f"Correct:           {report.correct}")
+    print(f"Incorrect:         {report.incorrect}")
+    print(f"Not determined:    {report.not_determined}")
+    print(f"Accuracy:          {report.accuracy * 100:.2f}%")
+    print(f"Determinate acc.:  {report.determinate_accuracy * 100:.2f}%")
+    return 0
+
+
+def _validate(args: argparse.Namespace) -> int:
+    target_id = args.target_id
+    if target_id.startswith("INC-"):
+        report = validate_incident(target_id)
+    else:
+        report = validate_request(target_id)
+    print(format_validation_report(report))
+    return 0 if report.valid else 1
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
@@ -153,6 +208,10 @@ def main(argv: list[str] | None = None) -> int:
         return _import_merchants(args)
     if args.command == "generate-scenarios":
         return _generate_scenarios(args)
+    if args.command == "evaluate-scenarios":
+        return _evaluate_scenarios(args)
+    if args.command == "validate":
+        return _validate(args)
     try:
         diagnosis = investigate(args.incident_id)
     except EvidenceNotFound as exc:

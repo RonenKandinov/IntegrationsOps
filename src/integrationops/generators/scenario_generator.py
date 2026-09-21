@@ -1,11 +1,14 @@
 """Build synthetic requests, responses, and incidents from generated merchants.
 
 The investigation engine never reads ground_truth.json.
+Amounts vary by merchant fields and a local Random(seed). Geography is not
+treated as real credit behavior.
 """
 
 from __future__ import annotations
 
 import json
+import random
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
@@ -19,8 +22,6 @@ LENDER_ID = "lender_456"
 LENDER_MIN = 10000
 LENDER_MAX = 50000
 CURRENCY = "USD"
-WITHIN_LIMITS_AMOUNT = 20000
-ABOVE_MAX_AMOUNT = 80000
 
 FAILURE_CODES = ("INVALID_AMOUNT", "TIMEOUT", "AUTHENTICATION_ERROR")
 
@@ -46,6 +47,7 @@ class ScenarioBundle:
     lenders: list[LenderConfig]
     ground_truth: list[GroundTruth]
     breakdown: dict[str, int] = field(default_factory=dict)
+    warning: str | None = None
 
 
 def load_merchants(path: Path | None = None) -> list[Merchant]:
@@ -95,17 +97,58 @@ def _lender() -> LenderConfig:
     )
 
 
+def _field_mix(merchant: Merchant) -> int:
+    digits = "".join(character for character in (merchant.zip_code_prefix or "") if character.isdigit())
+    zip_n = int(digits) if digits else 0
+    state_n = sum(ord(character) for character in (merchant.state or ""))
+    source_n = sum(ord(character) for character in merchant.source_id)
+    return zip_n + state_n + source_n
+
+
+def _amount_above_max(rng: random.Random, merchant: Merchant) -> int:
+    mix = _field_mix(merchant) + rng.randint(0, 9999)
+    return LENDER_MAX + 1 + (mix % 40000)
+
+
+def _amount_within_limits(rng: random.Random, merchant: Merchant) -> int:
+    mix = _field_mix(merchant) + rng.randint(0, 9999)
+    span = LENDER_MAX - LENDER_MIN
+    return LENDER_MIN + (mix % (span + 1))
+
+
+def _merchant_context(merchant: Merchant) -> str:
+    city = merchant.city or "unknown-city"
+    state = merchant.state or "unknown-state"
+    return (
+        f"Olist merchant {merchant.merchant_id} "
+        f"(source_id={merchant.source_id}, {city}/{state})"
+    )
+
+
 def generate_scenarios(
     merchants: list[Merchant],
     merchant_count: int = 100,
     seed: int = 1,
 ) -> ScenarioBundle:
-    del seed  # Generation is order-based; seed is accepted so reruns stay identical.
     if merchant_count < 1:
         raise ScenarioGeneratorError("merchant_count must be at least 1")
-    selected = merchants[:merchant_count]
-    if not selected:
+    if not merchants:
         raise ScenarioGeneratorError("No merchants available to generate scenarios")
+
+    warning = None
+    available = len(merchants)
+    used_count = merchant_count
+    if merchant_count > available:
+        warning = (
+            f"Requested {merchant_count} merchants, but only {available} are available. "
+            f"Using {available} merchants."
+        )
+        used_count = available
+
+    rng = random.Random(seed)
+    pool = list(merchants)
+    rng.shuffle(pool)
+    selected = pool[:used_count]
 
     requests: list[ApiRequest] = []
     responses: list[ApiResponse] = []
@@ -169,37 +212,39 @@ def generate_scenarios(
             breakdown[failure_code] += 1
 
     for merchant in selected:
+        context = _merchant_context(merchant)
         add_case(
             merchant,
             "INVALID_AMOUNT",
-            ABOVE_MAX_AMOUNT,
+            _amount_above_max(rng, merchant),
             "INVALID_AMOUNT",
-            "The requested amount is not valid for this lender.",
+            f"The requested amount is not valid for this lender. {context}",
             "Requested amount is above the lender's maximum allowed amount.",
         )
         add_case(
             merchant,
             "TIMEOUT",
-            WITHIN_LIMITS_AMOUNT,
+            _amount_within_limits(rng, merchant),
             "TIMEOUT",
-            "The lender API did not respond before the request timed out.",
+            f"The lender API did not respond before the request timed out. {context}",
             "The lender API did not respond before the request timed out.",
         )
         add_case(
             merchant,
             "AUTHENTICATION_ERROR",
-            WITHIN_LIMITS_AMOUNT,
+            _amount_within_limits(rng, merchant),
             "AUTHENTICATION_ERROR",
-            "The merchant is not authenticated with this lender.",
+            f"The merchant is not authenticated with this lender. {context}",
             "The merchant is not authenticated with this lender.",
         )
 
+    gap_merchant = selected[0]
     add_case(
-        selected[0],
+        gap_merchant,
         "INVALID_AMOUNT",
-        WITHIN_LIMITS_AMOUNT,
+        _amount_within_limits(rng, gap_merchant),
         "INVALID_AMOUNT",
-        "The requested amount is not valid for this lender.",
+        f"The requested amount is not valid for this lender. {_merchant_context(gap_merchant)}",
         "Not determined from lender min/max limits.",
         evidence_gap=True,
     )
@@ -212,6 +257,7 @@ def generate_scenarios(
         lenders=[_lender()],
         ground_truth=ground_truth,
         breakdown=breakdown,
+        warning=warning,
     )
 
 

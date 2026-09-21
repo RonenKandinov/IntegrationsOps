@@ -7,3 +7,5 @@ dist/
 build/
 .eggs/
 .pytest_cache/
+data/raw/*.csv
+integops.zip

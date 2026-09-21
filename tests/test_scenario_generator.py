@@ -1,7 +1,10 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from integrationops.generators.scenario_generator import (
+    ScenarioGeneratorError,
     generate_and_write,
     generate_scenarios,
     load_merchants,
@@ -37,16 +40,25 @@ def test_requests_and_incidents_are_unique_and_linked():
 def test_ground_truth_matches_scenario():
     bundle = generate_scenarios(_merchants(), merchant_count=1, seed=1)
     by_id = {item.incident_id: item for item in bundle.ground_truth}
-    invalid = next(item for item in bundle.incidents if item.failure_code == "INVALID_AMOUNT" and not by_id[item.incident_id].evidence_gap)
+    invalid = next(
+        item
+        for item in bundle.incidents
+        if item.failure_code == "INVALID_AMOUNT" and not by_id[item.incident_id].evidence_gap
+    )
     request = next(item for item in bundle.requests if item.request_id == invalid.request_id)
-    assert request.amount == 80000
+    assert request.amount > 50000
     assert by_id[invalid.incident_id].expected_root_cause.startswith("Requested amount is above")
     timeout = next(item for item in bundle.incidents if item.failure_code == "TIMEOUT")
     response = next(item for item in bundle.responses if item.request_id == timeout.request_id)
     assert response.error_code == "TIMEOUT"
+    assert "source_id=" in response.message
     gap = next(item for item in bundle.ground_truth if item.evidence_gap)
-    gap_request = next(item for item in bundle.requests if item.request_id == next(i.request_id for i in bundle.incidents if i.incident_id == gap.incident_id))
-    assert gap_request.amount == 20000
+    gap_request = next(
+        item
+        for item in bundle.requests
+        if item.request_id == next(i.request_id for i in bundle.incidents if i.incident_id == gap.incident_id)
+    )
+    assert 10000 <= gap_request.amount <= 50000
     assert gap.expected_root_cause.startswith("Not determined")
 
 
@@ -54,7 +66,31 @@ def test_generation_is_deterministic_with_fixed_seed():
     first = generate_scenarios(_merchants(), merchant_count=2, seed=7)
     second = generate_scenarios(_merchants(), merchant_count=2, seed=7)
     assert [item.request_id for item in first.requests] == [item.request_id for item in second.requests]
+    assert [item.merchant_id for item in first.requests] == [item.merchant_id for item in second.requests]
     assert [item.amount for item in first.requests] == [item.amount for item in second.requests]
+
+
+def test_different_seeds_produce_different_scenarios():
+    first = generate_scenarios(_merchants(), merchant_count=2, seed=123)
+    second = generate_scenarios(_merchants(), merchant_count=2, seed=999)
+    assert [item.merchant_id for item in first.requests] != [item.merchant_id for item in second.requests] or [
+        item.amount for item in first.requests
+    ] != [item.amount for item in second.requests]
+
+
+def test_count_caps_to_available_merchants():
+    bundle = generate_scenarios(_merchants(), merchant_count=50, seed=1)
+    assert bundle.merchants_used == 3
+    assert bundle.warning is not None
+    assert "50" in bundle.warning
+    assert "3" in bundle.warning
+
+
+def test_invalid_count_raises():
+    with pytest.raises(ScenarioGeneratorError):
+        generate_scenarios(_merchants(), merchant_count=0, seed=1)
+    with pytest.raises(ScenarioGeneratorError):
+        generate_scenarios(_merchants(), merchant_count=-2, seed=1)
 
 
 def test_write_does_not_touch_raw(tmp_path: Path):

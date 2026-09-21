@@ -59,3 +59,19 @@ class Diagnosis:
     recommended_action: str
     evidence: list[EvidenceItem] = field(default_factory=list)
     trace: list[str] = field(default_factory=list)
+
+
+@dataclass
+class ValidationIssue:
+    rule: str
+    code: str
+    message: str
+    evidence: list[EvidenceItem] = field(default_factory=list)
+    field: str | None = None
+
+
+@dataclass
+class ValidationReport:
+    target_id: str
+    valid: bool
+    issues: list[ValidationIssue] = field(default_factory=list)

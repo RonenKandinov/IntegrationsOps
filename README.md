@@ -54,15 +54,41 @@ The investigation engine does not read Kaggle files. MongoDB is planned later be
 ## Generate investigation scenarios
 
 ```bash
-python -m integrationops generate-scenarios
+python -m integrationops generate-scenarios --seed 123 --count 100
+python -m integrationops evaluate-scenarios
+python -m integrationops investigate INC-000001
 ```
 
-Writes synthetic `requests.json`, `responses.json`, `incidents.json`, `lenders.json`, and `ground_truth.json` under `data/generated/`. Ground truth is for later evaluation only; the engine never reads it.
+`--seed` is a local generator RNG (merchant shuffle and amount variation). `--count` larger than the merchant list is capped with a warning. Evaluation compares engine `root_cause` to `data/generated/ground_truth.json` and does not feed answers into the engine.
 
-Investigate a generated incident (after generate):
+Amounts stay within each failure class; city/state/source_id only vary the amount and appear in the API response message. Currency remains USD against `lender_456`.
+
+## Phase 2 — Validation vs investigation
+
+Investigation asks why a failure happened (failure-specific path + evidence → diagnosis).
+
+Validation asks whether a request or configuration is valid. It does not invent a root cause.
+
+Rules: amount range (`amount_below_min`, `amount_above_max`); required Store references (`missing_request`, `missing_lender`, `missing_incident`); INVALID_AMOUNT vs in-range amount (`inconsistent_invalid_amount`).
 
 ```bash
-python -m integrationops investigate INC-000001
+python -m integrationops validate REQ-000001
+python -m integrationops validate INC-000301
+```
+
+Example:
+
+```text
+Target: REQ-000001
+Status: INVALID
+Rule: amount_range
+Code: amount_above_max
+Message: Requested amount is above the lender maximum.
+Field: amount
+Evidence:
+- requested_amount = 80000
+- minimum_allowed = 10000
+- maximum_allowed = 50000
 ```
 
 ## Investigate an incident
@@ -97,6 +123,7 @@ python -m pytest
 - `src/integrationops/tools/` — investigation actions
 - `src/integrationops/investigations/` — INVALID_AMOUNT, TIMEOUT, AUTHENTICATION_ERROR
 - `src/integrationops/engine/` — `failure_code` dispatcher
+- `src/integrationops/validation/` — amount, reference, and consistency rules
 - `src/integrationops/cli.py` — command line
 
 ## Later (not in this phase)
