@@ -15,9 +15,11 @@ from integrationops.automation.resolution import run_resolution_workflow
 from integrationops.automation.validation_workflow import run_validation_workflow
 from integrationops.evaluation.scorer import (
     DEFAULT_GROUND_TRUTH_PATH,
+    score_production_events,
     score_scenarios,
 )
 from integrationops.engine import investigate
+from integrationops.events import investigate_event
 from integrationops.generators.scenario_generator import (
     DEFAULT_MERCHANTS_PATH,
     DEFAULT_OUTPUT_DIR,
@@ -73,6 +75,23 @@ def build_parser() -> argparse.ArgumentParser:
         help="Run the failure-specific investigation for an incident id",
     )
     investigate_parser.add_argument("incident_id", help="Incident id, for example INC-001")
+
+    event_parser = subparsers.add_parser(
+        "investigate-event",
+        help="Investigate one production-like event from data/production/evidence",
+    )
+    event_parser.add_argument("event_id", help="Event id, for example EVENT-001")
+
+    evaluate_events_parser = subparsers.add_parser(
+        "evaluate-events",
+        help="Score production-like investigations against their ground truth",
+    )
+    evaluate_events_parser.add_argument(
+        "--ground-truth",
+        type=Path,
+        default=None,
+        help="Path to data/production/ground_truth.json",
+    )
 
     import_parser = subparsers.add_parser(
         "import-merchants",
@@ -248,6 +267,57 @@ def _evaluate_scenarios(args: argparse.Namespace) -> int:
     return 0
 
 
+def format_event_diagnosis(diagnosis: Diagnosis) -> str:
+    evidence_lines = "\n".join(f"- {item.fact}" for item in diagnosis.evidence)
+    trace_lines = "\n".join(f"- {step}" for step in diagnosis.trace)
+    return "\n".join(
+        [
+            f"Event: {diagnosis.incident_id}",
+            f"Investigation status: {diagnosis.status}",
+            "",
+            "Root cause:",
+            diagnosis.root_cause,
+            "",
+            "Evidence:",
+            evidence_lines,
+            "",
+            "Explanation:",
+            diagnosis.explanation,
+            "",
+            "Recommended action:",
+            diagnosis.recommended_action,
+            "",
+            "Investigation trace:",
+            trace_lines,
+        ]
+    )
+
+
+def _investigate_event(args: argparse.Namespace) -> int:
+    try:
+        diagnosis = investigate_event(args.event_id)
+    except EvidenceNotFound as exc:
+        print(exc, file=sys.stderr)
+        return 1
+    print(format_event_diagnosis(diagnosis))
+    return 0
+
+
+def _evaluate_events(args: argparse.Namespace) -> int:
+    try:
+        report = score_production_events(ground_truth_path=args.ground_truth)
+    except FileNotFoundError as exc:
+        print(exc, file=sys.stderr)
+        return 1
+    print("Production Event Evaluation")
+    print("---------------------------")
+    print(f"Total cases:       {report.total_cases}")
+    print(f"Correct:           {report.correct}")
+    print(f"Incorrect:         {report.incorrect}")
+    print(f"Accuracy:          {report.accuracy * 100:.2f}%")
+    return 0 if report.incorrect == 0 else 1
+
+
 def _validate(args: argparse.Namespace) -> int:
     target_id = args.target_id
     if target_id.startswith("INC-"):
@@ -301,6 +371,10 @@ def _automate_resolution(args: argparse.Namespace) -> int:
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command == "investigate-event":
+        return _investigate_event(args)
+    if args.command == "evaluate-events":
+        return _evaluate_events(args)
     if args.command == "import-merchants":
         return _import_merchants(args)
     if args.command == "generate-scenarios":

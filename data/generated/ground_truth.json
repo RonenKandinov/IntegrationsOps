@@ -1,0 +1,1808 @@
+[
+  {
+    "incident_id": "INC-000001",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000002",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000003",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000004",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000005",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000006",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000007",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000008",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000009",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000010",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000011",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000012",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000013",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000014",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000015",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000016",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000017",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000018",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000019",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000020",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000021",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000022",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000023",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000024",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000025",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000026",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000027",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000028",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000029",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000030",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000031",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000032",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000033",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000034",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000035",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000036",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000037",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000038",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000039",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000040",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000041",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000042",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000043",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000044",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000045",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000046",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000047",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000048",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000049",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000050",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000051",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000052",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000053",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000054",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000055",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000056",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000057",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000058",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000059",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000060",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000061",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000062",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000063",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000064",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000065",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000066",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000067",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000068",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000069",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000070",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000071",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000072",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000073",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000074",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000075",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000076",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000077",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000078",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000079",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000080",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000081",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000082",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000083",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000084",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000085",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000086",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000087",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000088",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000089",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000090",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000091",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000092",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000093",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000094",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000095",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000096",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000097",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000098",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000099",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000100",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000101",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000102",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000103",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000104",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000105",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000106",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000107",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000108",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000109",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000110",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000111",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000112",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000113",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000114",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000115",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000116",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000117",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000118",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000119",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000120",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000121",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000122",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000123",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000124",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000125",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000126",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000127",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000128",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000129",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000130",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000131",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000132",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000133",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000134",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000135",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000136",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000137",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000138",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000139",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000140",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000141",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000142",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000143",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000144",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000145",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000146",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000147",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000148",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000149",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000150",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000151",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000152",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000153",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000154",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000155",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000156",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000157",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000158",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000159",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000160",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000161",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000162",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000163",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000164",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000165",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000166",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000167",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000168",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000169",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000170",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000171",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000172",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000173",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000174",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000175",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000176",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000177",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000178",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000179",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000180",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000181",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000182",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000183",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000184",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000185",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000186",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000187",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000188",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000189",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000190",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000191",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000192",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000193",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000194",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000195",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000196",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000197",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000198",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000199",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000200",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000201",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000202",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000203",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000204",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000205",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000206",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000207",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000208",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000209",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000210",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000211",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000212",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000213",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000214",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000215",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000216",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000217",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000218",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000219",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000220",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000221",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000222",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000223",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000224",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000225",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000226",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000227",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000228",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000229",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000230",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000231",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000232",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000233",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000234",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000235",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000236",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000237",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000238",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000239",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000240",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000241",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000242",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000243",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000244",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000245",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000246",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000247",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000248",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000249",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000250",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000251",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000252",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000253",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000254",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000255",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000256",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000257",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000258",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000259",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000260",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000261",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000262",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000263",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000264",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000265",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000266",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000267",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000268",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000269",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000270",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000271",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000272",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000273",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000274",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000275",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000276",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000277",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000278",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000279",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000280",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000281",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000282",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000283",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000284",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000285",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000286",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000287",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000288",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000289",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000290",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000291",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000292",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000293",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000294",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000295",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000296",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000297",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000298",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000299",
+    "expected_failure_code": "TIMEOUT",
+    "expected_root_cause": "The lender API did not respond before the request timed out.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000300",
+    "expected_failure_code": "AUTHENTICATION_ERROR",
+    "expected_root_cause": "The merchant is not authenticated with this lender.",
+    "evidence_gap": false
+  },
+  {
+    "incident_id": "INC-000301",
+    "expected_failure_code": "INVALID_AMOUNT",
+    "expected_root_cause": "Not determined from lender min/max limits.",
+    "evidence_gap": true
+  }
+]

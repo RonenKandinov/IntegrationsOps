@@ -48,6 +48,8 @@ Three runtime questions:
 
 **Evaluation** asks a fourth question after the fact: was the investigation correct? It compares the engine’s root cause with `data/generated/ground_truth.json`. The engine never reads that file.
 
+A later decision layer would observe a wider operational state, choose a feasible action, and re-evaluate when new information arrives. What exists now is a snapshot of the merchant → lender → validation → incident → diagnosis chain, including several merchants that share one lender configuration. It records dependencies and the diagnosis action. It does not score them or execute them. No optimizer or scheduling algorithm has been selected. See [docs/architecture.md](docs/architecture.md) and [docs/INTEGRATIONOPS_SYSTEM_MODEL.md](docs/INTEGRATIONOPS_SYSTEM_MODEL.md).
+
 Runtime flow:
 
 ```text
@@ -98,6 +100,17 @@ CLI
 ```
 
 Resolution calls the existing investigation and validation. It does not reimplement them. Exit code 0 is only for status `READY`.
+
+### Production-like events
+
+`data/production/evidence/` holds messy cases. The incident has a failure code and ids only. Amounts, limits, and error codes are on the request, lender, and response. Expected outcomes live only in `data/production/ground_truth.json`, which the investigation does not read.
+
+```bash
+python -m integrationops investigate-event EVENT-001
+python -m integrationops evaluate-events
+```
+
+`investigate-event` prints a status: `ROOT_CAUSE_DETERMINED`, `EVIDENCE_GAP`, `INCONSISTENT_EVIDENCE`, or `NOT_DETERMINED`. A missing lender or response is a gap. A response that disagrees with the limits or names another lender is an inconsistency. The engine does not invent a cause from the failure code alone.
 
 ## Where the files actually are
 

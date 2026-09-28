@@ -1,0 +1,8 @@
+[
+  {
+    "lender_id": "lender_prod",
+    "min_amount": 10000,
+    "max_amount": 50000,
+    "currency": "USD"
+  }
+]

@@ -25,6 +25,7 @@ class ApiResponse:
     status: str
     error_code: str
     message: str
+    noted_lender_id: str | None = None
 
 
 @dataclass
@@ -59,6 +60,7 @@ class Diagnosis:
     recommended_action: str
     evidence: list[EvidenceItem] = field(default_factory=list)
     trace: list[str] = field(default_factory=list)
+    status: str = ""
 
 
 @dataclass

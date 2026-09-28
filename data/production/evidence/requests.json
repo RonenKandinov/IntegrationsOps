@@ -1,0 +1,51 @@
+[
+  {
+    "request_id": "REQ-EVT-001",
+    "merchant_id": "MER-EVT-001",
+    "lender_id": "lender_prod",
+    "amount": 80000,
+    "currency": "USD"
+  },
+  {
+    "request_id": "REQ-EVT-002",
+    "merchant_id": "MER-EVT-001",
+    "lender_id": "lender_missing",
+    "amount": 80000,
+    "currency": "USD"
+  },
+  {
+    "request_id": "REQ-EVT-003",
+    "merchant_id": "MER-EVT-001",
+    "lender_id": "lender_prod",
+    "amount": 40000,
+    "currency": "USD"
+  },
+  {
+    "request_id": "REQ-EVT-004",
+    "merchant_id": "MER-EVT-001",
+    "lender_id": "lender_prod",
+    "amount": 20000,
+    "currency": "USD"
+  },
+  {
+    "request_id": "REQ-EVT-005",
+    "merchant_id": "MER-EVT-001",
+    "lender_id": "lender_prod",
+    "amount": 20000,
+    "currency": "USD"
+  },
+  {
+    "request_id": "REQ-EVT-006",
+    "merchant_id": "MER-EVT-001",
+    "lender_id": "lender_prod",
+    "amount": 80000,
+    "currency": "USD"
+  },
+  {
+    "request_id": "REQ-EVT-007",
+    "merchant_id": "MER-EVT-001",
+    "lender_id": "lender_prod",
+    "amount": 20000,
+    "currency": "USD"
+  }
+]

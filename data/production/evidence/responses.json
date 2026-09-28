@@ -1,0 +1,39 @@
+[
+  {
+    "request_id": "REQ-EVT-001",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-EVT-002",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-EVT-003",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-EVT-005",
+    "status": "FAILED",
+    "error_code": "UNKNOWN_GATEWAY_ERROR",
+    "message": "The upstream gateway returned an unrecognized error."
+  },
+  {
+    "request_id": "REQ-EVT-006",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "Rejected by the downstream lender.",
+    "noted_lender_id": "lender_other"
+  },
+  {
+    "request_id": "REQ-EVT-007",
+    "status": "FAILED",
+    "error_code": "UNAVAILABLE",
+    "message": "No usable response body."
+  }
+]

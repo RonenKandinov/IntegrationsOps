@@ -1,0 +1,1808 @@
+[
+  {
+    "request_id": "REQ-000001",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000002",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000003",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000004",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000005",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000006",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000007",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000008",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000009",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000010",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000011",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000012",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000013",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000014",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000015",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000016",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000017",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000018",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000019",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000020",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000021",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000022",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000023",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000024",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000025",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000026",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000027",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000028",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000029",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000030",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000031",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000032",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000033",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000034",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000035",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000036",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000037",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000038",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000039",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000040",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000041",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000042",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000043",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000044",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000045",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000046",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000047",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000048",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000049",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000050",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000051",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000052",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000053",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000054",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000055",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000056",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000057",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000058",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000059",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000060",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000061",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000062",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000063",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000064",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000065",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000066",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000067",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000068",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000069",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000070",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000071",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000072",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000073",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000074",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000075",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000076",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000077",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000078",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000079",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000080",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000081",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000082",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000083",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000084",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000085",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000086",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000087",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000088",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000089",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000090",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000091",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000092",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000093",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000094",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000095",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000096",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000097",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000098",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000099",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000100",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000101",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000102",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000103",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000104",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000105",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000106",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000107",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000108",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000109",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000110",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000111",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000112",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000113",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000114",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000115",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000116",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000117",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000118",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000119",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000120",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000121",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000122",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000123",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000124",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000125",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000126",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000127",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000128",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000129",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000130",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000131",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000132",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000133",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000134",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000135",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000136",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000137",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000138",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000139",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000140",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000141",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000142",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000143",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000144",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000145",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000146",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000147",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000148",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000149",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000150",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000151",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000152",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000153",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000154",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000155",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000156",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000157",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000158",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000159",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000160",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000161",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000162",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000163",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000164",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000165",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000166",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000167",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000168",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000169",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000170",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000171",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000172",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000173",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000174",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000175",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000176",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000177",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000178",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000179",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000180",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000181",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000182",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000183",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000184",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000185",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000186",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000187",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000188",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000189",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000190",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000191",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000192",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000193",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000194",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000195",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000196",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000197",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000198",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000199",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000200",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000201",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000202",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000203",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000204",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000205",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000206",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000207",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000208",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000209",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000210",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000211",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000212",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000213",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000214",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000215",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000216",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000217",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000218",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000219",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000220",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000221",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000222",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000223",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000224",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000225",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000226",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000227",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000228",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000229",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000230",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000231",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000232",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000233",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000234",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000235",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000236",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000237",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000238",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000239",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000240",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000241",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000242",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000243",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000244",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000245",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000246",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000247",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000248",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000249",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000250",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000251",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000252",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000253",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000254",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000255",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000256",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000257",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000258",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000259",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000260",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000261",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000262",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000263",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000264",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000265",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000266",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000267",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000268",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000269",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000270",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000271",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000272",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000273",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000274",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000275",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000276",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000277",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000278",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000279",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000280",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000281",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000282",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000283",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000284",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000285",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000286",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000287",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000288",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000289",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000290",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000291",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000292",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000293",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000294",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000295",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000296",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000297",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000298",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  },
+  {
+    "request_id": "REQ-000299",
+    "status": "FAILED",
+    "error_code": "TIMEOUT",
+    "message": "The lender API did not respond before the request timed out."
+  },
+  {
+    "request_id": "REQ-000300",
+    "status": "FAILED",
+    "error_code": "AUTHENTICATION_ERROR",
+    "message": "The merchant is not authenticated with this lender."
+  },
+  {
+    "request_id": "REQ-000301",
+    "status": "FAILED",
+    "error_code": "INVALID_AMOUNT",
+    "message": "The requested amount is not valid for this lender."
+  }
+]

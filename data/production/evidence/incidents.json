@@ -1,0 +1,51 @@
+[
+  {
+    "incident_id": "EVENT-001",
+    "merchant_id": "MER-EVT-001",
+    "lender_id": "lender_prod",
+    "failure_code": "INVALID_AMOUNT",
+    "request_id": "REQ-EVT-001"
+  },
+  {
+    "incident_id": "EVENT-002",
+    "merchant_id": "MER-EVT-001",
+    "lender_id": "lender_missing",
+    "failure_code": "INVALID_AMOUNT",
+    "request_id": "REQ-EVT-002"
+  },
+  {
+    "incident_id": "EVENT-003",
+    "merchant_id": "MER-EVT-001",
+    "lender_id": "lender_prod",
+    "failure_code": "INVALID_AMOUNT",
+    "request_id": "REQ-EVT-003"
+  },
+  {
+    "incident_id": "EVENT-004",
+    "merchant_id": "MER-EVT-001",
+    "lender_id": "lender_prod",
+    "failure_code": "INVALID_AMOUNT",
+    "request_id": "REQ-EVT-004"
+  },
+  {
+    "incident_id": "EVENT-005",
+    "merchant_id": "MER-EVT-001",
+    "lender_id": "lender_prod",
+    "failure_code": "UNKNOWN_GATEWAY_ERROR",
+    "request_id": "REQ-EVT-005"
+  },
+  {
+    "incident_id": "EVENT-006",
+    "merchant_id": "MER-EVT-001",
+    "lender_id": "lender_prod",
+    "failure_code": "INVALID_AMOUNT",
+    "request_id": "REQ-EVT-006"
+  },
+  {
+    "incident_id": "EVENT-007",
+    "merchant_id": "MER-EVT-001",
+    "lender_id": "lender_prod",
+    "failure_code": "TIMEOUT",
+    "request_id": "REQ-EVT-007"
+  }
+]

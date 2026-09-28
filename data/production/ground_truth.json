@@ -1,0 +1,37 @@
+[
+  {
+    "event_id": "EVENT-001",
+    "expected_status": "ROOT_CAUSE_DETERMINED",
+    "expected_root_cause": "Requested amount is above the lender's maximum allowed amount."
+  },
+  {
+    "event_id": "EVENT-002",
+    "expected_status": "EVIDENCE_GAP",
+    "expected_root_cause": "Not determined: lender configuration is missing."
+  },
+  {
+    "event_id": "EVENT-003",
+    "expected_status": "INCONSISTENT_EVIDENCE",
+    "expected_root_cause": "Not determined from lender min/max limits."
+  },
+  {
+    "event_id": "EVENT-004",
+    "expected_status": "EVIDENCE_GAP",
+    "expected_root_cause": "Not determined: response evidence is missing."
+  },
+  {
+    "event_id": "EVENT-005",
+    "expected_status": "NOT_DETERMINED",
+    "expected_root_cause": "Not determined: no investigation path for this failure code."
+  },
+  {
+    "event_id": "EVENT-006",
+    "expected_status": "INCONSISTENT_EVIDENCE",
+    "expected_root_cause": "Not determined: request and response name different lenders."
+  },
+  {
+    "event_id": "EVENT-007",
+    "expected_status": "NOT_DETERMINED",
+    "expected_root_cause": "Not determined from the TIMEOUT investigation path."
+  }
+]

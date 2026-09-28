@@ -8,6 +8,11 @@ from pathlib import Path
 from typing import Callable
 
 from integrationops.engine import investigate
+from integrationops.events import investigate_event
+
+DEFAULT_EVENT_TRUTH_PATH = (
+    Path(__file__).resolve().parents[3] / "data" / "production" / "ground_truth.json"
+)
 from integrationops.models import Diagnosis
 
 DEFAULT_GROUND_TRUTH_PATH = (
@@ -102,5 +107,64 @@ def score_scenarios(
         not_determined=not_determined,
         accuracy=accuracy,
         determinate_accuracy=determinate_accuracy,
+        cases=cases,
+    )
+
+
+@dataclass
+class ProductionCaseScore:
+    event_id: str
+    expected_status: str
+    actual_status: str
+    expected_root_cause: str
+    actual_root_cause: str
+    label: str
+
+
+@dataclass
+class ProductionEvaluationReport:
+    total_cases: int
+    correct: int
+    incorrect: int
+    accuracy: float
+    cases: list[ProductionCaseScore] = field(default_factory=list)
+
+
+def score_production_events(
+    ground_truth_path: Path | None = None,
+    evidence_dir: Path | None = None,
+) -> ProductionEvaluationReport:
+    truth_path = ground_truth_path or DEFAULT_EVENT_TRUTH_PATH
+    records = json.loads(truth_path.read_text(encoding="utf-8"))
+    if not isinstance(records, list):
+        raise ValueError(f"{truth_path} must contain a JSON array")
+    cases: list[ProductionCaseScore] = []
+    correct = 0
+    for record in records:
+        diagnosis = investigate_event(record["event_id"], evidence_dir=evidence_dir)
+        expected_status = record["expected_status"]
+        expected_root_cause = record["expected_root_cause"]
+        status_matches = diagnosis.status == expected_status
+        cause_matches = diagnosis.root_cause == expected_root_cause
+        guessed_cause = expected_status != "ROOT_CAUSE_DETERMINED" and diagnosis.status == "ROOT_CAUSE_DETERMINED"
+        label = "correct" if status_matches and cause_matches and not guessed_cause else "incorrect"
+        if label == "correct":
+            correct += 1
+        cases.append(
+            ProductionCaseScore(
+                event_id=record["event_id"],
+                expected_status=expected_status,
+                actual_status=diagnosis.status,
+                expected_root_cause=expected_root_cause,
+                actual_root_cause=diagnosis.root_cause,
+                label=label,
+            )
+        )
+    total = len(cases)
+    return ProductionEvaluationReport(
+        total_cases=total,
+        correct=correct,
+        incorrect=total - correct,
+        accuracy=(correct / total) if total else 0.0,
         cases=cases,
     )

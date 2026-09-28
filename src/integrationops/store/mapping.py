@@ -46,6 +46,7 @@ def response_from_record(record: dict[str, Any], request_id: str) -> ApiResponse
             status=_require_str(record, "status"),
             error_code=_require_str(record, "error_code"),
             message=_require_str(record, "message"),
+            noted_lender_id=_optional_str(record, "noted_lender_id"),
         )
     except StoreError as exc:
         raise StoreError(f"Malformed response for request {request_id}: {exc}") from exc
@@ -61,6 +62,15 @@ def lender_from_record(record: dict[str, Any], lender_id: str) -> LenderConfig:
         )
     except StoreError as exc:
         raise StoreError(f"Malformed lender config {lender_id}: {exc}") from exc
+
+
+def _optional_str(record: dict[str, Any], field: str) -> str | None:
+    if field not in record or record[field] is None:
+        return None
+    value = record[field]
+    if not isinstance(value, str) or not value.strip():
+        return None
+    return value
 
 
 def _require_str(record: dict[str, Any], field: str) -> str:
