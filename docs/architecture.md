@@ -34,6 +34,8 @@ Modules:
 - `src/integrationops/tools/` — fetch records and compare an amount to limits
 - `src/integrationops/validation/` — amount, reference, and consistency checks
 - `src/integrationops/automation/` — dry-run workflows and `safety_decision`
+- `src/integrationops/operations/` — `SystemState`, feasible actions, in-memory `T`
+- `src/integrationops/experiments/` — organization scenarios, `MethodInput`, snapshots, metrics
 - `src/integrationops/store/` — JSON by default, MongoDB behind the same lookups
 - `src/integrationops/importers/`, `generators/`, `evaluation/` — offline data and scoring
 
@@ -51,31 +53,31 @@ Modules:
           +---------------+---------------+
           |                               |
           ↓                               ↓
-  Investigation Layer             Operational Decision Layer
-  (implemented)                   (not implemented)
+  Investigation Layer             Operational State Layer
+  (implemented)                   (state, A_f, in-memory T)
           |                               |
       Incident                         State S_t
           ↓                               |
       Evidence                      Dependencies
           ↓                               |
-      Diagnosis                      Resources
+      Diagnosis               Operational constraints
           ↓                               |
  Candidate Actions                  Constraints
           |                               |
           +---------------+---------------+
                           ↓
-                    Action Selection
+                    Action Selection   ← future
                           ↓
-                       Execute
+                  Production execute   ← future
                           ↓
                     New System State
                           ↓
-                       Re-evaluate
+                       Re-evaluate     ← future
 ```
 
-The left side is the investigation engine. The right side is described in [INTEGRATIONOPS_SYSTEM_MODEL.md](INTEGRATIONOPS_SYSTEM_MODEL.md). Action selection, execution, and `S_(t+1)` are not implemented. No module selects an optimal action.
+The left side is the investigation engine. The right side is described in [INTEGRATIONOPS_SYSTEM_MODEL.md](INTEGRATIONOPS_SYSTEM_MODEL.md). `SystemState`, feasible actions, and in-memory `T` exist. Policy `π`, objective `J`, and production execution do not. No module selects an optimal action.
 
-Today the handoff stops at a candidate:
+Today the investigation handoff is still a candidate. The operational layer can record that diagnosis on `S_t` and apply a feasible in-memory transition. It does not execute in production.
 
 ```text
 Incident
@@ -89,24 +91,50 @@ Incident
 
 ## Implemented now
 
-`src/integrationops/operations/snapshot.py` records one moment of the concrete chain:
+`src/integrationops/operations/` records the operational model on top of existing records:
 
 ```text
-Merchant → Lender configuration → Validation → Incident → Investigation → Recommended action
+Merchant → Integration → Configuration / API / Payment
+ → Incident → Investigation → Diagnosis → Candidate resolution
+ → in-memory T → Validation → Merchant operational
 ```
 
-It reuses `Merchant`, `LenderConfig`, `Incident`, `ValidationReport`, and `Diagnosis`. It does not introduce a generic entity, task, resource, or optimizer type.
+It reuses `Merchant`, `LenderConfig`, `Incident`, `ApiRequest`, `ApiResponse`, `ValidationReport`, and `Diagnosis`, and adds `Integration`.
 
-- **V_t / Q_t.** The snapshot lists the merchants, the lender configuration, the incident, the validation result, and the diagnosis status already produced by the engine.
-- **E_t.** Dependencies are edges between those ids. Several merchants can depend on one shared lender configuration. That is the structural fact a later objective would use: one configuration change can sit in front of more than one merchant. The snapshot does not score that impact.
-- **Ω_t.** The arriving incident is recorded as an evidence fact. There is no event bus.
-- **Candidate action.** The only action stored is `Diagnosis.recommended_action`. It is not chosen among alternatives, and it is not executed.
+- **V_t / Q_t.** `SystemState` lists merchants, integrations, lender configuration, payment, incident, validation, and investigation work. `task_states` uses `{Pending, Ready, InProgress, Blocked, Completed, Failed}` for those operational work items. `Diagnosis.status` is unchanged.
+- **E_t.** Dependencies are edges between those ids, including merchant → integration → lender/API/payment. Several merchants can depend on one shared lender configuration.
+- **R_t.** Operational constraints: transaction limits, configuration presence, API availability, provider availability, payment. Not engineers or staffing.
+- **Ω_t.** `OperationalEvent` is new information. `T` can apply it in memory. There is no production event bus.
+- **A / A_f.** `all_actions` / `feasible_actions` name investigate, fix configuration, validate, onboard, retry, escalate, safety check, and resolve. They are not executed against the store.
+- **T.** `transition(state, action, event)` is `S_(t+1) = T(S_t, a_t, ω_t)` in memory. Infeasible actions are rejected. The evidence store is not written.
 
-A second call with different records is a later observation. The module does not compute the transition between them.
+`operations/snapshot.py` remains the smaller chain snapshot used to assemble those records.
+
+`src/integrationops/experiments/` is the research/benchmark layer. It sits on the existing domain models and `ChainSnapshot`; it is not a second investigation engine.
+
+```text
+Existing IntegrationOps
+        ↓
+Research Layer
+        ↓
+Organization Generator
+        ↓
+Dynamic Scenarios (explicit topology)
+        ↓
+Experiment Harness  (solve(scenario) -> MethodResult)
+        ↓
+Method A / B / C
+```
+
+Generate the environment first. Then compare solution methods on the exact same scenario. Families: `independent`, `shared_bottleneck`, `cascading_failure`, `dynamic_arrival`, `shared_resource_conflict`, `mixed`. Ground truth is factual (dependencies, failures, event timing, capacities, constraints, task properties). It does not name an optimal action.
+
+`generate-organization`, `generate-scenario`, and `run-experiment` are CLI entry points. The existing `generate-scenarios` command remains the narrow investigation benchmark from Olist merchants.
+
+The existing `generators/scenario_generator.py` still builds investigation-evaluation cases from Olist merchants. It is separate from the organization experiment generator.
 
 ## Still future
 
-Resources and capacity, the task-state set `{Pending, Ready, InProgress, Blocked, Completed, Failed}`, feasible-action filtering, the policy `π`, execution, `S_(t+1)`, and any scoring of `J`. No problem class has been selected.
+Policy `π`, any scoring of `J`, an optimizer, RCPSP/MDP/RL/MILP, human resource allocation, production execution, and automatic re-evaluation after real-world execution. No problem class has been selected.
 
 ## Target loop
 
@@ -128,7 +156,7 @@ A plan made at time `t` is not assumed to still be the right plan after new evid
 - Investigation stays evidence-based and deterministic.
 - Validation checks records. It does not choose a schedule.
 - Automation names a safe dry-run action. It does not execute one.
-- A chain snapshot records merchant–lender dependencies and the diagnosis action. It is not a general graph engine, a transition function, or a policy `π`.
-- Resources and capacity are not in the repository.
+- A chain snapshot and `SystemState` record merchant–integration–lender–payment dependencies, operational constraints, feasible candidate actions, and in-memory `T`. They are not a general graph engine, a policy `π`, or an optimizer.
+- `R_t` is operational/system constraints (limits, APIs, providers, configuration, availability). It is not staffing.
 - No algorithm has been selected. RCPSP, MDP, and the other classes in the system-model document are literature to compare later, not an implementation commitment.
 - The core stays generic. A particular company would be a later instance of the model, not a set of core types.

@@ -30,6 +30,17 @@ IntegrationOps
 ├── Persistence
 │   └── Store
 │
+├── Operations
+│   ├── System state S_t
+│   ├── Feasible actions A_f
+│   └── In-memory transition T
+│
+├── Experiments
+│   ├── Organization generators
+│   ├── Dynamic scenarios
+│   ├── MethodInput snapshots
+│   └── Basic metrics
+│
 ├── Data
 │   ├── Seed Data
 │   └── Generated Data
@@ -48,7 +59,7 @@ Three runtime questions:
 
 **Evaluation** asks a fourth question after the fact: was the investigation correct? It compares the engine’s root cause with `data/generated/ground_truth.json`. The engine never reads that file.
 
-A later decision layer would observe a wider operational state, choose a feasible action, and re-evaluate when new information arrives. What exists now is a snapshot of the merchant → lender → validation → incident → diagnosis chain, including several merchants that share one lender configuration. It records dependencies and the diagnosis action. It does not score them or execute them. No optimizer or scheduling algorithm has been selected. See [docs/architecture.md](docs/architecture.md) and [docs/INTEGRATIONOPS_SYSTEM_MODEL.md](docs/INTEGRATIONOPS_SYSTEM_MODEL.md).
+A later decision layer would observe a wider operational state, choose a feasible action, and re-evaluate when new information arrives. What exists now is `SystemState` plus an experiment harness that generates connected organizations and hands every future method the same `MethodInput` (`S_t`, `A(S_t)`, `A_f(S_t)`). It records snapshots and basic metrics. It does not score `J`, select a policy `π`, allocate people, or execute in production. No optimizer or scheduling algorithm has been selected. See [docs/architecture.md](docs/architecture.md) and [docs/INTEGRATIONOPS_SYSTEM_MODEL.md](docs/INTEGRATIONOPS_SYSTEM_MODEL.md).
 
 Runtime flow:
 
@@ -135,6 +146,8 @@ IntegrationOps/
 │       ├── generators/
 │       ├── importers/
 │       ├── evaluation/
+│       ├── operations/
+│       ├── experiments/
 │       └── cli.py
 │
 └── tests/
@@ -270,6 +283,32 @@ python -m integrationops import-merchants
 ```
 
 Normalized merchants are written to `data/generated/merchants.json` with stable ids (`MER-000001`, …). Raw files stay in `data/raw/`.
+
+## Research experiments
+
+The investigation generator (`generate-scenarios`) is unchanged. A separate research layer generates organizations and dynamic topologies so later methods can be compared on the same case.
+
+```text
+Existing IntegrationOps
+        ↓
+Research Layer
+        ↓
+Organization Generator
+        ↓
+Dynamic Scenarios
+        ↓
+Experiment Harness
+        ↓
+Method A / B / C
+```
+
+```bash
+python -m integrationops generate-organization --profile small --seed 21 --topology shared_bottleneck
+python -m integrationops generate-scenario --profile small --seed 21 --topology independent
+python -m integrationops run-experiment --profile small --seed 21 --topology mixed
+```
+
+Topologies: `independent`, `shared_bottleneck`, `cascading_failure`, `dynamic_arrival`, `shared_resource_conflict`, `mixed`. Ground truth is factual, not a recommended policy. `run-experiment` currently replays events with a null method. No optimizer is selected.
 
 ## Generate and score scenarios
 

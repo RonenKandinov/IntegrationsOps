@@ -208,6 +208,36 @@ def build_parser() -> argparse.ArgumentParser:
         help="Dry-run automation decision from an existing investigation",
     )
     resolution_parser.add_argument("incident_id", help="Incident id, for example INC-001")
+
+    org_parser = subparsers.add_parser(
+        "generate-organization",
+        help="Generate a reproducible synthetic organization for experiments",
+    )
+    org_parser.add_argument("--profile", choices=("small", "medium", "large"), default="small")
+    org_parser.add_argument("--seed", type=int, default=1)
+    org_parser.add_argument(
+        "--topology",
+        default="shared_bottleneck",
+        help="independent, shared_bottleneck, cascading_failure, dynamic_arrival, shared_resource_conflict, mixed",
+    )
+
+    scenario_parser = subparsers.add_parser(
+        "generate-scenario",
+        help="Generate a dynamic research scenario (not the investigation benchmark)",
+    )
+    scenario_parser.add_argument("--profile", choices=("small", "medium", "large"), default="small")
+    scenario_parser.add_argument("--seed", type=int, default=1)
+    scenario_parser.add_argument("--topology", default="shared_bottleneck")
+    scenario_parser.add_argument("--horizon", type=int, default=None)
+
+    experiment_parser = subparsers.add_parser(
+        "run-experiment",
+        help="Replay a scenario through the research harness (no optimizer)",
+    )
+    experiment_parser.add_argument("--profile", choices=("small", "medium", "large"), default="small")
+    experiment_parser.add_argument("--seed", type=int, default=1)
+    experiment_parser.add_argument("--topology", default="shared_bottleneck")
+    experiment_parser.add_argument("--horizon", type=int, default=None)
     return parser
 
 
@@ -368,6 +398,87 @@ def _automate_resolution(args: argparse.Namespace) -> int:
     return _exit_for_result(result)
 
 
+def _generate_organization(args: argparse.Namespace) -> int:
+    from integrationops.generators.organization import TOPOLOGIES, generate_organization
+
+    if args.topology not in TOPOLOGIES:
+        print(f"Unknown topology {args.topology!r}. Use {', '.join(TOPOLOGIES)}.", file=sys.stderr)
+        return 1
+    world = generate_organization(profile=args.profile, seed=args.seed, topology=args.topology)
+    print(f"Organization: {world.organization.organization_id}")
+    print(f"Name: {world.organization.name}")
+    print(f"Profile: {world.profile}")
+    print(f"Topology: {world.topology}")
+    print(f"Seed: {world.seed}")
+    print(f"Merchants: {len(world.merchants)}")
+    print(f"Lenders: {len(world.lenders)}")
+    print(f"Integrations: {len(world.integrations)}")
+    print(f"Incidents: {len(world.incidents)}")
+    print(f"Requests: {len(world.requests)}")
+    return 0
+
+
+def _generate_research_scenario(args: argparse.Namespace) -> int:
+    from integrationops.experiments.scenario import generate_scenario
+    from integrationops.generators.organization import TOPOLOGIES
+
+    if args.topology not in TOPOLOGIES:
+        print(f"Unknown topology {args.topology!r}. Use {', '.join(TOPOLOGIES)}.", file=sys.stderr)
+        return 1
+    scenario = generate_scenario(
+        profile=args.profile,
+        seed=args.seed,
+        topology=args.topology,
+        horizon=args.horizon,
+    )
+    print(f"Scenario: {scenario.scenario_id}")
+    print(f"Topology: {scenario.topology}")
+    print(f"Seed: {scenario.seed}")
+    print(f"Horizon: {scenario.horizon}")
+    print(f"Merchants: {len(scenario.initial_state.merchants)}")
+    print(f"Work items: {len(scenario.work_items)}")
+    print(f"Events: {len(scenario.timeline)}")
+    print(f"Capacities: {len(scenario.capacities)}")
+    if scenario.ground_truth is not None:
+        print(f"Failures (facts): {len(scenario.ground_truth.failures)}")
+    return 0
+
+
+def _run_experiment(args: argparse.Namespace) -> int:
+    from integrationops.experiments.harness import NullResearchMethod, run_experiment
+    from integrationops.experiments.scenario import generate_scenario
+    from integrationops.generators.organization import TOPOLOGIES
+
+    if args.topology not in TOPOLOGIES:
+        print(f"Unknown topology {args.topology!r}. Use {', '.join(TOPOLOGIES)}.", file=sys.stderr)
+        return 1
+    scenario = generate_scenario(
+        profile=args.profile,
+        seed=args.seed,
+        topology=args.topology,
+        horizon=args.horizon,
+    )
+    results = run_experiment(scenario, [NullResearchMethod()])
+    print(f"Scenario: {scenario.scenario_id}")
+    print(f"Methods: {len(results)}")
+    for result in results:
+        metrics = result.metrics
+        print("")
+        print(f"Method: {result.method_name}")
+        print(f"Runtime seconds: {result.runtime_seconds:.4f}")
+        if metrics is None:
+            continue
+        print(f"Merchant recovery: {metrics.merchant_recovery:.2f}")
+        print(f"Blocked tasks: {metrics.blocked_tasks}")
+        print(f"Completed tasks: {metrics.completed_tasks}")
+        print(f"SLA violations: {metrics.sla_violations}")
+        print(f"Constraint violations: {metrics.constraint_violations}")
+        print(f"Resource utilization: {metrics.resource_utilization:.2f}")
+        print(f"Replanning count: {result.replanning_count}")
+        print("Objective value: unset")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
@@ -393,6 +504,12 @@ def main(argv: list[str] | None = None) -> int:
         return _automate_config(args)
     if args.command == "automate-resolution":
         return _automate_resolution(args)
+    if args.command == "generate-organization":
+        return _generate_organization(args)
+    if args.command == "generate-scenario":
+        return _generate_research_scenario(args)
+    if args.command == "run-experiment":
+        return _run_experiment(args)
     try:
         diagnosis = investigate(args.incident_id)
     except EvidenceNotFound as exc:

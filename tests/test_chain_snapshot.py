@@ -57,8 +57,12 @@ def test_chain_records_states_events_and_the_diagnosis_action():
 
     relations = {item.relation for item in snapshot.dependencies}
     assert "merchant_requires_lender" in relations
+    assert "merchant_requires_integration" in relations
+    assert "integration_requires_lender" in relations
+    assert "integration_requires_api" in relations
     assert "incident_requires_request" in relations
     assert "validation_checks_lender" in relations
+    assert len(snapshot.integrations) == 3
     assert snapshot.candidate_actions == [
         "Check whether the loan amount should be reduced to at most 50000."
     ]

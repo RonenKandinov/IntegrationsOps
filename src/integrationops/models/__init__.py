@@ -46,6 +46,27 @@ class Merchant:
 
 
 @dataclass
+class Integration:
+    """Merchant-to-lender integration. A member of V_t, not a store document."""
+
+    integration_id: str
+    merchant_id: str
+    lender_id: str
+    operational: bool = False
+
+
+@dataclass
+class Organization:
+    """A generic grouping of merchants and lenders. Not a named real company."""
+
+    organization_id: str
+    name: str
+    size: str
+    merchant_ids: list[str] = field(default_factory=list)
+    lender_ids: list[str] = field(default_factory=list)
+
+
+@dataclass
 class EvidenceItem:
     source: str
     fact: str
