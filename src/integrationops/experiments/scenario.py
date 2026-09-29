@@ -24,10 +24,12 @@ from integrationops.generators.organization import (
     generate_organizations,
 )
 from integrationops.operations.actions import all_actions, feasible_actions
+from integrationops.operations.constants import ACTION_INVESTIGATE
 from integrationops.operations.snapshot import ChainSnapshot, observe_chain
 from integrationops.operations.state import SystemState
 from integrationops.operations.transition import InfeasibleActionError, transition
 from integrationops.operations.types import CandidateAction, OperationalEvent
+from integrationops.store.errors import EvidenceNotFound
 
 
 @dataclass
@@ -221,27 +223,52 @@ def apply_step(
     *,
     action: CandidateAction | None = None,
     event: OperationalEvent | None = None,
+    events: list[OperationalEvent] | None = None,
+    diagnosis=None,
 ) -> tuple[SystemState, bool]:
-    """Apply T when there is work. Returns (next_state, action_succeeded)."""
-    if action is None and event is None:
+    """Apply one tick of T. Every event in the tick is applied, and time advances once."""
+    scheduled = list(events) if events is not None else ([] if event is None else [event])
+    tick = state.time + 1
+    run_action = action
+    action_diagnosis = diagnosis
+    succeeded = True
+    if action is not None and action.kind == ACTION_INVESTIGATE and diagnosis is None:
+        action_diagnosis = _engine_diagnosis(state, action.target_id)
+        if action_diagnosis is None:
+            run_action = None
+            succeeded = False
+    if run_action is None and not scheduled:
         nxt = copy.deepcopy(state)
-        nxt.time = state.time + 1
-        return nxt, True
+        nxt.time = tick
+        return nxt, succeeded
+    head = scheduled[0] if scheduled else None
     try:
-        return transition(state, action, event), True
+        nxt = transition(state, run_action, head, diagnosis=action_diagnosis)
     except InfeasibleActionError:
-        if event is None:
+        succeeded = False
+        if head is None:
             nxt = copy.deepcopy(state)
-            nxt.time = state.time + 1
-            return nxt, False
-        return transition(state, None, event), False
+            nxt.time = tick
+        else:
+            nxt = transition(state, None, head)
+    nxt.time = tick
+    for extra in scheduled[1:]:
+        nxt = transition(nxt, None, extra)
+        nxt.time = tick
+    return nxt, succeeded
 
 
 def replay_scenario(
     scenario: Scenario,
     method: DecisionMethod | None = None,
 ) -> list[TraceStep]:
-    """Advance through the timeline. `method` may be None (events only)."""
+    """Advance through the timeline. `method` may be None (events only).
+
+    All events scheduled at a tick are applied after the method chooses, in
+    timeline order. Work items on this scenario object are refreshed from the
+    resulting state. The investigation engine runs only when the chosen action
+    is investigate.
+    """
     chooser = method or NullDecisionMethod()
     state = copy.deepcopy(scenario.initial_state)
     steps: list[TraceStep] = []
@@ -249,18 +276,69 @@ def replay_scenario(
         payload = scenario.method_input(state)
         action = chooser.choose(payload)
         events = scenario.events_at(tick)
-        event = events[0] if events else None
-        state, succeeded = apply_step(state, action=action, event=event)
+        state, succeeded = apply_step(state, action=action, events=events)
+        scenario.work_items = derive_work_items(
+            state,
+            sla_window=sla_window_for(scenario.profile),
+            templates=scenario.work_items,
+        )
         steps.append(
             TraceStep(
                 time=state.time,
                 action=action,
-                event=event,
+                event=events[0] if events else None,
                 action_succeeded=succeeded,
                 state=state,
+                events=list(events),
             )
         )
     return steps
+
+
+def _engine_diagnosis(state: SystemState, incident_id: str):
+    """Call the existing engine against this state's evidence. Does not score it."""
+    import integrationops.store as store_mod
+    from integrationops.engine import investigate
+
+    previous = store_mod._store
+    store_mod._store = _StateEvidence(state)
+    try:
+        return investigate(incident_id)
+    except EvidenceNotFound:
+        return None
+    finally:
+        store_mod._store = previous
+
+
+class _StateEvidence:
+    """EvidenceStore view of one SystemState. Not a persistent backend."""
+
+    def __init__(self, state: SystemState) -> None:
+        self._state = state
+
+    def load_incident(self, incident_id: str):
+        incident = self._state.incident(incident_id)
+        if incident is None:
+            raise EvidenceNotFound(f"Incident not found: {incident_id}")
+        return incident
+
+    def get_request(self, request_id: str):
+        request = self._state.request(request_id)
+        if request is None:
+            raise EvidenceNotFound(f"Request not found: {request_id}")
+        return request
+
+    def get_response(self, request_id: str):
+        response = self._state.response(request_id)
+        if response is None:
+            raise EvidenceNotFound(f"Response not found: {request_id}")
+        return response
+
+    def get_lender_config(self, lender_id: str):
+        lender = self._state.lender(lender_id)
+        if lender is None:
+            raise EvidenceNotFound(f"Lender config not found: {lender_id}")
+        return lender
 
 
 def _primary_chain(world: OrganizationWorld) -> ChainSnapshot | None:

@@ -387,3 +387,134 @@ def test_cli_research_commands(capsys):
     assert "Completed tasks:" in out
     assert "Decision runtime seconds: unset" in out
     assert "Objective value" not in out
+
+
+def test_replay_applies_every_event_at_one_tick_and_keeps_the_original_state():
+    from integrationops.experiments.snapshots import freeze_state
+    from integrationops.models import ApiRequest, ApiResponse, Incident
+    from integrationops.operations.constants import EVENT_NEW_INCIDENT
+    from integrationops.operations.types import OperationalEvent
+    from integrationops.experiments.scenario import ScheduledEvent
+
+    scenario = generate_scenario(profile="small", seed=21, topology="independent", horizon=2)
+    original = freeze_state(scenario.initial_state)
+    timeline = [(item.time, item.event.event_id) for item in scenario.timeline]
+    host = scenario.initial_state.merchants[0]
+    lender_id = scenario.initial_state.lenders[0].lender_id
+    tick = 1
+    first = OperationalEvent(
+        event_id="evt-extra-a",
+        kind=EVENT_NEW_INCIDENT,
+        subject_id="INC-EXTRA-A",
+        incident=Incident(
+            incident_id="INC-EXTRA-A",
+            merchant_id=host.merchant_id,
+            lender_id=lender_id,
+            failure_code="TIMEOUT",
+            request_id="REQ-EXTRA-A",
+        ),
+        request=ApiRequest(
+            request_id="REQ-EXTRA-A",
+            merchant_id=host.merchant_id,
+            lender_id=lender_id,
+            amount=20000,
+            currency="USD",
+        ),
+        response=ApiResponse(
+            request_id="REQ-EXTRA-A",
+            status="FAILED",
+            error_code="TIMEOUT",
+            message="timed out",
+        ),
+    )
+    second = OperationalEvent(
+        event_id="evt-extra-b",
+        kind=EVENT_NEW_INCIDENT,
+        subject_id="INC-EXTRA-B",
+        incident=Incident(
+            incident_id="INC-EXTRA-B",
+            merchant_id=host.merchant_id,
+            lender_id=lender_id,
+            failure_code="TIMEOUT",
+            request_id="REQ-EXTRA-B",
+        ),
+        request=ApiRequest(
+            request_id="REQ-EXTRA-B",
+            merchant_id=host.merchant_id,
+            lender_id=lender_id,
+            amount=22000,
+            currency="USD",
+        ),
+        response=ApiResponse(
+            request_id="REQ-EXTRA-B",
+            status="FAILED",
+            error_code="TIMEOUT",
+            message="timed out",
+        ),
+    )
+    scenario.timeline = [
+        ScheduledEvent(time=tick, event=first),
+        ScheduledEvent(time=tick, event=second),
+    ]
+    steps = replay_scenario(scenario, NullDecisionMethod())
+    assert freeze_state(scenario.initial_state) == original
+    assert [(item.time, item.event.event_id) for item in scenario.timeline] == [
+        (tick, "evt-extra-a"),
+        (tick, "evt-extra-b"),
+    ]
+    assert timeline  # the generated timeline existed before this replay replaced it
+    step = steps[0]
+    assert step.time == tick
+    assert [item.event_id for item in step.events] == ["evt-extra-a", "evt-extra-b"]
+    assert step.state.incident("INC-EXTRA-A") is not None
+    assert step.state.incident("INC-EXTRA-B") is not None
+    assert step.state.time == tick
+    arrivals = {
+        item.work_id: item.arrival_time
+        for item in scenario.work_items
+        if item.work_id in {"investigate:INC-EXTRA-A", "investigate:INC-EXTRA-B"}
+    }
+    assert arrivals == {"investigate:INC-EXTRA-A": tick, "investigate:INC-EXTRA-B": tick}
+    again = replay_scenario(scenario, NullDecisionMethod())
+    assert [(item.time, [event.event_id for event in item.events]) for item in again] == [
+        (item.time, [event.event_id for event in item.events]) for item in steps
+    ]
+
+
+def test_investigate_action_uses_the_engine_without_scoring_it():
+    from integrationops.operations.constants import ACTION_INVESTIGATE
+    import integrationops.store as store_mod
+
+    scenario = generate_scenario(profile="small", seed=21, topology="independent", horizon=1)
+    incident = next(
+        item for item in scenario.initial_state.incidents if item.failure_code == "INVALID_AMOUNT"
+    )
+    scenario.initial_state.diagnoses = [
+        item for item in scenario.initial_state.diagnoses if item.incident_id != incident.incident_id
+    ]
+    store_before = store_mod._store
+
+    class Once:
+        name = "investigate-once"
+
+        def __init__(self) -> None:
+            self.done = False
+
+        def choose(self, payload):
+            if self.done:
+                return None
+            self.done = True
+            return next(
+                item
+                for item in payload.feasible_actions
+                if item.kind == ACTION_INVESTIGATE and item.target_id == incident.incident_id
+            )
+
+    steps = replay_scenario(scenario, Once())
+    diagnosis = steps[0].state.diagnosis_for(incident.incident_id)
+    assert steps[0].action_succeeded is True
+    assert diagnosis is not None
+    assert diagnosis.incident_id == incident.incident_id
+    assert diagnosis.failure_code == "INVALID_AMOUNT"
+    assert diagnosis.root_cause
+    assert store_mod._store is store_before

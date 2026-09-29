@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from integrationops.experiments.work import CapacityConstraint, WorkItem
 from integrationops.operations.constants import (
@@ -26,6 +26,7 @@ class TraceStep:
     event: OperationalEvent | None
     action_succeeded: bool
     state: SystemState
+    events: list[OperationalEvent] = field(default_factory=list)
 
 
 @dataclass
