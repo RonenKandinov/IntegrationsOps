@@ -384,4 +384,6 @@ def test_cli_research_commands(capsys):
     assert main(["run-experiment", "--seed", "21", "--topology", "independent", "--horizon", "3"]) == 0
     out = capsys.readouterr().out
     assert "Method: null" in out
-    assert "Objective value: unset" in out
+    assert "Completed tasks:" in out
+    assert "Decision runtime seconds: unset" in out
+    assert "Objective value" not in out

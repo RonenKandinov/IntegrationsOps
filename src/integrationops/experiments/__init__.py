@@ -16,6 +16,12 @@ from integrationops.experiments.metrics import (
     TraceStep,
     compute_metrics,
 )
+from integrationops.experiments.research_eval import (
+    ResearchReport,
+    TaskCompletion,
+    UtilizationSample,
+    evaluate_run,
+)
 from integrationops.experiments.scenario import (
     DecisionMethod,
     MethodInput,
@@ -35,10 +41,14 @@ __all__ = [
     "NullDecisionMethod",
     "NullResearchMethod",
     "ResearchMethod",
+    "ResearchReport",
     "Scenario",
     "TOPOLOGIES",
+    "TaskCompletion",
     "TraceStep",
+    "UtilizationSample",
     "compute_metrics",
+    "evaluate_run",
     "dump_scenario",
     "freeze_state",
     "generate_organization",

@@ -444,8 +444,15 @@ def _generate_research_scenario(args: argparse.Namespace) -> int:
     return 0
 
 
+def _format_optional(value: float | None) -> str:
+    if value is None:
+        return "unset"
+    return f"{value:.4f}"
+
+
 def _run_experiment(args: argparse.Namespace) -> int:
     from integrationops.experiments.harness import NullResearchMethod, run_experiment
+    from integrationops.experiments.research_eval import evaluate_run
     from integrationops.experiments.scenario import generate_scenario
     from integrationops.generators.organization import TOPOLOGIES
 
@@ -462,20 +469,26 @@ def _run_experiment(args: argparse.Namespace) -> int:
     print(f"Scenario: {scenario.scenario_id}")
     print(f"Methods: {len(results)}")
     for result in results:
-        metrics = result.metrics
+        report = evaluate_run(
+            scenario,
+            result.trace,
+            method_name=result.method_name,
+            decision_runtime_seconds=None,
+            replanning_count=0,
+        )
         print("")
-        print(f"Method: {result.method_name}")
-        print(f"Runtime seconds: {result.runtime_seconds:.4f}")
-        if metrics is None:
-            continue
-        print(f"Merchant recovery: {metrics.merchant_recovery:.2f}")
-        print(f"Blocked tasks: {metrics.blocked_tasks}")
-        print(f"Completed tasks: {metrics.completed_tasks}")
-        print(f"SLA violations: {metrics.sla_violations}")
-        print(f"Constraint violations: {metrics.constraint_violations}")
-        print(f"Resource utilization: {metrics.resource_utilization:.2f}")
-        print(f"Replanning count: {result.replanning_count}")
-        print("Objective value: unset")
+        print(f"Method: {report.method_name}")
+        print(f"Completed tasks: {report.completed_tasks}")
+        print(f"Failed tasks: {report.failed_tasks}")
+        print(f"Blocked tasks: {report.blocked_tasks}")
+        print(f"SLA violations: {report.sla_violations}")
+        print(f"Constraint violations: {report.constraint_violations}")
+        print(f"Completion time: {_format_optional(report.completion_time)}")
+        print(f"Replanning count: {report.replanning_count}")
+        print(f"Resource utilization: {_format_optional(report.resource_utilization)}")
+        print(f"Decision runtime seconds: {_format_optional(report.runtime_seconds)}")
+        print(f"Task completion records: {len(report.task_completion_times)}")
+        print(f"Utilization samples: {len(report.utilization_samples)}")
     return 0
 
 
